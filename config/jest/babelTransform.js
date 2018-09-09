@@ -7,5 +7,8 @@ module.exports = babelJest.createTransformer({
     require.resolve("@babel/preset-react"),
     require.resolve("@babel/preset-env")
   ],
-  plugins: [require.resolve("babel-plugin-styled-components")]
+  plugins: [
+    require.resolve("babel-plugin-styled-components"),
+    require.resolve("@babel/plugin-syntax-dynamic-import")
+  ]
 });
