@@ -82,10 +82,8 @@ function getClientEnvironment(publicUrl) {
             ? path.relative(
                 path.dirname(paths.appIndexJs),
                 process.env.INIT_CWD
-              )
-            : null,
-        APP_PATH: paths.appPath,
-        APP_INDEX: paths.appIndexJs
+              ) + "/local/index.demo"
+            : null
       }
     );
   // Stringify all values so we can feed into Webpack DefinePlugin

@@ -14,6 +14,7 @@
     "redux": "^4.0.0",
     "redux-saga": "^0.16.0",
     "styled-components": "^4.0.0-beta.0",
+    "styled-normalize": "^8.0.0",
     "styled-tools": "^1.4.3"
   },
   "devDependencies": {
@@ -34,7 +35,10 @@
     "case-sensitive-paths-webpack-plugin": "2.1.2",
     "chalk": "2.4.1",
     "cross-env": "^5.2.0",
+    "cross-var": "^1.1.0",
     "css-loader": "0.28.11",
+    "cypress": "^3.1.0",
+    "cypress-testing-library": "^2.2.1",
     "dotenv": "5.0.1",
     "dotenv-expand": "4.2.0",
     "eslint": "4.19.1",
@@ -94,8 +98,9 @@
     "sg:build": "npx styleguidist build",
     "lint": "eslint ~/.eslintrc.js src/**/*.js",
     "lint:fix": "eslint ~/.eslintrc.js . --fix src/**/*.js",
-    "start:local": "run-s start",
-    "local": "node localTest/puppeteer"
+    "cypress:open": "cypress open",
+    "local:e2e": "cross-var cypress run --spec $INIT_CWD/local/*.e2e.js",
+    "localE2e": "node custom_scripts/localE2e"
   },
   "browserslist": {
     "development": [
