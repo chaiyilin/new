@@ -262,7 +262,8 @@ module.exports = {
                       }
                     ],
                     [require.resolve("babel-plugin-styled-components")],
-                    [require.resolve("@babel/plugin-syntax-dynamic-import")]
+                    [require.resolve("@babel/plugin-syntax-dynamic-import")],
+                    [require.resolve("@babel/plugin-proposal-class-properties")]
                   ],
                   compact: true,
                   highlightCode: true

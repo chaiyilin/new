@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@atlaskit/modal-dialog": "^7.0.1",
     "@babel/polyfill": "^7.0.0",
     "path-browser": "^2.2.1",
     "promise": "8.0.1",
@@ -10,7 +11,7 @@
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
     "react-loadable": "^5.5.0",
-    "rebass": "^2.1.0",
+    "rebass": "^3.0.0-8",
     "redux": "^4.0.0",
     "redux-saga": "^0.16.0",
     "styled-components": "^4.0.0-beta.0",
@@ -19,6 +20,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
     "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "@babel/preset-env": "^7.0.0",

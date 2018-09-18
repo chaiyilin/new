@@ -227,7 +227,8 @@ module.exports = {
                       }
                     ],
                     [require.resolve("babel-plugin-styled-components")],
-                    [require.resolve("@babel/plugin-syntax-dynamic-import")]
+                    [require.resolve("@babel/plugin-syntax-dynamic-import")],
+                    [require.resolve("@babel/plugin-proposal-class-properties")]
                   ],
                   // This is a feature of `babel-loader` for webpack (not Babel itself).
                   // It enables caching results in ./node_modules/.cache/babel-loader/

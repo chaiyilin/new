@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import { Button } from "rebass";
+import ModalDialog, { ModalTransition } from "@atlaskit/modal-dialog";
 
 const height = `5em`;
 const borderWidth = `5px`;
@@ -39,28 +41,35 @@ const CenterText = styled.div`
   text-align: center;
 `;
 
-const Main = styled.main``;
+const Main = styled.main`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
 class RequestInvite extends Component {
+  state = { isOpen: false };
+  open = () => this.setState({ isOpen: true });
+  close = () => this.setState({ isOpen: false });
   render() {
+    const { isOpen } = this.state;
     return (
       <Wrapper data-testid={this.props[`data-testid`]}>
         <Header as="header">Broccoli & Co.</Header>
         <Main>
-          <CenterText as="h4">
-            The functionality Create a simple yet clean homepage for them that
-            allow users to enter their name and email to receive email
-            invitations. Visual Requirements The UI should occupy the full
-            height of the screen. Shows a fixed header that is always on top of
-            the window and a footer that is always on the bottom of the window
-            (assuming a reasonable window height). The page content is
-            sandwiched in the middle, containing just a heading, a small piece
-            of text and a button to request an invite. A rough mockup of the
-            basic layout is attached. While preserving this layout on desktop,
-            you may style it however you wish, with or without images. The
-            solution must be mobile friendly (users won't need to pinch and zoom
-            on their mobile devices).
+          <CenterText as="h1">
+            A better way <br />
+            to enjoy every day.
           </CenterText>
+          <CenterText as="h5">Be the first to know when we launch.</CenterText>
+          <Button width={[0.15]} onClick={this.open}>
+            Request an invite
+          </Button>
+          <ModalTransition>
+            {isOpen && (
+              <ModalDialog onClose={this.close} heading="Request an invite" />
+            )}
+          </ModalTransition>
         </Main>
         <Footer as="footer">footer</Footer>
       </Wrapper>
