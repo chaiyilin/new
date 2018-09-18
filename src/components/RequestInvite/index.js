@@ -8,7 +8,8 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 90vh;
+  height: 100vh;
+  box-sizing: border-box;
   overflow-x: hidden;
   overflow-y: auto;
   border: ${borderWidth} solid red;
