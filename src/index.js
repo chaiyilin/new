@@ -12,9 +12,12 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     box-sizing:border-box;
   }
+
+  div {
+    box-sizing:border-box;
+  }
 `;
 
-console.log(process.env.RELATIVE_LOCAL_PATH);
 let Entry = (
   <>
     <GlobalStyle />

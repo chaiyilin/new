@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { Button } from "rebass";
 import ModalDialog, { ModalTransition } from "@atlaskit/modal-dialog";
+import InviteForm from "./InviteForm";
 
 const height = `5em`;
 const borderWidth = `5px`;
@@ -11,7 +12,6 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
-  box-sizing: border-box;
   overflow-x: hidden;
   overflow-y: auto;
   border: ${borderWidth} solid red;
@@ -47,6 +47,8 @@ const Main = styled.main`
   align-items: center;
 `;
 
+const ModalHeader = () => <h4>Request an invite</h4>;
+
 class RequestInvite extends Component {
   state = { isOpen: false };
   open = () => this.setState({ isOpen: true });
@@ -67,7 +69,9 @@ class RequestInvite extends Component {
           </Button>
           <ModalTransition>
             {isOpen && (
-              <ModalDialog onClose={this.close} heading="Request an invite" />
+              <ModalDialog onClose={this.close} header={ModalHeader}>
+                <InviteForm />
+              </ModalDialog>
             )}
           </ModalTransition>
         </Main>
