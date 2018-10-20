@@ -1,6 +1,6 @@
 describe("RequestInvite: ", function() {
   beforeEach(function() {
-    cy.visit("http://localhost:3000/");
+    cy.visit("/");
   });
   it("header", function() {
     cy.getByTestId("entry").should("contain", "Broccoli & Co.");

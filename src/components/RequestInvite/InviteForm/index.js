@@ -11,9 +11,19 @@ import validatorWithMessage from "utils/validators/helpers/validatorWithMessage"
 
 const FieldsWrapper = styled.div`
   display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1em;
+  grid-auto-flow: dense;
+  align-items: center;
+
+  input,
+  button {
+    grid-column: 1/2;
+    width: 10em;
+    margin: 0;
+  }
 `;
 
-console.log(isEmpty("a"));
 const fullNameValidator = value => isLength(value, { min: 3, max: undefined });
 const emailConfirmValidator = (value, values) => value === values.email;
 const inviteFormValidator = values =>
@@ -62,6 +72,7 @@ const InviteForm = () => (
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.fullName}
+              required="required"
             />
             {errors.fullName && touched.fullName && errors.fullName}
 

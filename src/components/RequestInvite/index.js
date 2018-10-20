@@ -69,7 +69,11 @@ class RequestInvite extends Component {
           </Button>
           <ModalTransition>
             {isOpen && (
-              <ModalDialog onClose={this.close} header={ModalHeader}>
+              <ModalDialog
+                onClose={this.close}
+                header={ModalHeader}
+                width="small"
+              >
                 <InviteForm />
               </ModalDialog>
             )}
