@@ -1,4 +1,4 @@
-import React from "react";
-import RequestInvite from "..";
+import React from 'react'
+import RequestInvite from '..'
 
-export default () => <RequestInvite data-testid="entry" />;
+export default () => <RequestInvite data-testid="entry" />

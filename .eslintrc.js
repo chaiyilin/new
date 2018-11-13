@@ -1,4 +1,14 @@
 module.exports = {
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx']
+      },
+      webpack: {
+        config: './config/webpack.config.dev.js'
+      }
+    }
+  },
   globals: {
     require: true,
     process: true,
@@ -10,8 +20,15 @@ module.exports = {
     browser: true,
     mocha: true
   },
-  plugins: ['prettier'],
-  extends: ['eslint:recommended', 'plugin:react/recommended', 'prettier'],
+  plugins: ['jsx-a11y', 'prettier'],
+  extends: [
+    'eslint:recommended',
+    'plugin:import/errors',
+    'plugin:import/warnings',
+    'plugin:react/recommended',
+    'plugin:jsx-a11y/recommended',
+    'prettier'
+  ],
   parser: 'babel-eslint',
   parserOptions: {
     ecmaVersion: 2017,
@@ -39,4 +56,4 @@ module.exports = {
     'prettier/prettier': ['error', { singleQuote: true, printWidth: 120 }],
     'react/display-name': [0]
   }
-};
+}

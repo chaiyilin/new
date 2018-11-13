@@ -67,7 +67,7 @@ RadioGroup.propTypes = {
 
 const RadioOption = props => {
   return (
-    <div onClick={props.onClick}>
+    <div onClick={props.onClick} onKeyPress={props.onClick} role="button" tabIndex={1}>
       <RadioIcon isSelected={props.isSelected} /> {props.children}
     </div>
   )
